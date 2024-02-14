@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffdf8;
+}
+
+main {
+    margin: 10px;
+    padding: 10px;
+
+    width: 100%;
+
+    justify-self: center;
+
+    border-radius: 5px;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 #ca88;
+}

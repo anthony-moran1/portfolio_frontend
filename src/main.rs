@@ -1,13 +1,26 @@
+mod router;
+mod layout;
+
+mod index;
+mod projects;
+mod about_me;
+
+mod settings;
+
+mod sidebar;
+mod sidebar_item;
+
 use yew::prelude::*;
+use yew_router::prelude::*;
+
+use router::{Route, switch};
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <>
-        <h1>{"Portfolio"}</h1>
-        <p>{"Welcome to my portfolio site!"}</p>
-        <p>{"Here is another line!"}</p>
-        </>
+        <BrowserRouter>
+            <Switch<Route> render={switch} /> // <- must be child of <BrowserRouter>
+        </BrowserRouter>
     }
 }
 
