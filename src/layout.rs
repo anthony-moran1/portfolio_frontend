@@ -23,21 +23,28 @@ pub type ThemeContext = UseReducerHandle<Theme>;
 #[function_component(Layout)]
 pub fn layout(props: &LayoutProps) -> Html {
     let theme = use_reducer_eq(|| Theme {
-        theme: String::new()
+        theme: String::new(),
     });
 
     html! {
     <ContextProvider<ThemeContext> context={theme.clone()}>
-    <div theme={theme.theme.clone()} class="flex vh-100">
-        <div id="background" class="page-background-colour"></div>
-        <LeftContent />
-        <div id="main-content">
+    <div theme={theme.theme.clone()}>
+            <LeftContent />
             <main>
-                <h2 class="page-colour">{props.title.clone()}</h2>
-                {props.children.clone()}
+                <div id="main-start">
+                    <h2 class="page-colour">{props.title.clone()}</h2>
+                    {props.children.clone()}
+                </div>
+
+                <div id="main-middle">
+                    {props.children_middle.clone()}
+                </div>
+
+                <div id="main-end">
+                    {props.children_end.clone()}
+                </div>
             </main>
         </div>
-    </div>
     </ContextProvider<ThemeContext>>
     }
 }
@@ -46,4 +53,8 @@ pub fn layout(props: &LayoutProps) -> Html {
 pub struct LayoutProps {
     pub title: AttrValue,
     pub children: Html,
+    #[prop_or_default]
+    pub children_middle: Html,
+    #[prop_or_default]
+    pub children_end: Html
 }

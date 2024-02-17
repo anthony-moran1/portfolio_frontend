@@ -5,6 +5,7 @@ use yew::prelude::*;
 pub fn projects() -> Html {
     html! {
     <Layout title="Projects">
+    <div class="projects">
         <div class="project">
             <h3>{"This Website!"}</h3>
             <p>{"Yes, it's a bit meta but this website is the product of my own design! I have used rust from start to end, including this front end!"}</p>
@@ -16,6 +17,7 @@ pub fn projects() -> Html {
 
             <img src="images/Memories.png" />
         </div>
+    </div>
     </Layout>
     }
 }

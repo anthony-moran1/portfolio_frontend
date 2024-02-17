@@ -8,13 +8,17 @@
 }
 
 .vh-100 {
-    height: 100vh;
+    height: 100dvh;
 }
 
 .page-colour {
-    color: var(--page-colour);
+    color: var(--col-page);
 }
 
 .page-background-colour {
-    background-color: var(--page-colour);
+    background-color: var(--col-page);
+}
+
+.align-items-center {
+    align-items: center;
 }

@@ -16,7 +16,10 @@ pub fn sidebar_item(props: &SidebarItemProps) -> Html {
 
     html! {
         <li id={format!("sidebar-option-{}", props.name.to_lowercase().replace(" ", "-"))} class="sidebar-option">
-            <a class={format!("flex sidebar-option-link {}", cls)} href={props.link.clone()}>{props.name.clone()}</a>
+            <a class={format!("flex sidebar-option-link {}", cls)} href={props.link.clone()}>
+                {props.name.clone()}
+                <div class="sidebar-option-overlay page-background-colour"></div>
+            </a>
         </li>
     }
 }

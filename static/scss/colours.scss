@@ -1,5 +1,5 @@
 :root {
-    --col-games: orange;
+    --col-games: coral;
     
     --col-home: palegoldenrod;
     --col-projects: palegreen;
@@ -9,33 +9,42 @@
     --col-blog: palevioletred;
     --col-settings: slategrey;
 
-    --page-colour: var(--col-home);
+    --col-page: var(--col-home);
+    --col-main: whitesmoke;
+    --col-text: #000;
 }
 
 [theme="games"] {
-    --page-colour: var(--col-games);
+    --col-page: var(--col-games);
 }
 
 [theme="home"] {
-    --page-colour: var(--col-home);
+    --col-page: var(--col-home);
 }
 
 [theme="projects"] {
-    --page-colour: var(--col-projects);
+    --col-page: var(--col-projects);
 }
 
 [theme="about-me"] {
-    --page-colour: var(--col-about-me);
+    --col-page: var(--col-about-me);
 }
 
 [theme="socials"] {
-    --page-colour: var(--col-socials);
+    --col-page: var(--col-socials);
 }
 
 [theme="blog"] {
-    --page-colour: var(--col-blog);
+    --col-page: var(--col-blog);
 }
 
 [theme="settings"] {
-    --page-colour: var(--col-settings);
+    --col-page: var(--col-settings);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --col-main: #222228;
+        --col-text: ivory;
+    }
 }

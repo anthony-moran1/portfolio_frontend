@@ -1,5 +1,5 @@
-.project:not(:first-child) {
-    margin: 20px 0;
+.project:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .video-game-image-parent {
