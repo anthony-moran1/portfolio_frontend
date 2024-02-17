@@ -1,0 +1,41 @@
+:root {
+    --col-games: orange;
+    
+    --col-home: palegoldenrod;
+    --col-projects: palegreen;
+    --col-about-me: paleturquoise;
+
+    --col-socials: plum;
+    --col-blog: palevioletred;
+    --col-settings: slategrey;
+
+    --page-colour: var(--col-home);
+}
+
+[theme="games"] {
+    --page-colour: var(--col-games);
+}
+
+[theme="home"] {
+    --page-colour: var(--col-home);
+}
+
+[theme="projects"] {
+    --page-colour: var(--col-projects);
+}
+
+[theme="about-me"] {
+    --page-colour: var(--col-about-me);
+}
+
+[theme="socials"] {
+    --page-colour: var(--col-socials);
+}
+
+[theme="blog"] {
+    --page-colour: var(--col-blog);
+}
+
+[theme="settings"] {
+    --page-colour: var(--col-settings);
+}

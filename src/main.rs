@@ -1,19 +1,23 @@
-mod router;
 mod layout;
+mod router;
 
+mod about_me;
 mod index;
 mod projects;
-mod about_me;
 
 mod settings;
+mod socials;
 
+mod left_content;
 mod sidebar;
 mod sidebar_item;
+mod blog;
+mod games;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use router::{Route, switch};
+use router::{switch, Route};
 
 #[function_component(App)]
 fn app() -> Html {

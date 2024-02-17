@@ -1,27 +1,61 @@
 use crate::sidebar_item::{SidebarItem, SidebarItemProps};
-use yew::prelude::*;
 use web_sys::window;
+use yew::prelude::*;
 
 #[function_component(Sidebar)]
 pub fn sidebar() -> Html {
-    let mut items = vec![
+    let start_items = vec![SidebarItemProps {
+        link: AttrValue::from("/games"),
+        name: AttrValue::from("Games"),
+        selected: false,
+    }];
+
+    let main_items = vec![
         SidebarItemProps {
-            link: "/".to_string(),
-            name: "Home".to_string(),
-            selected: false
+            link: AttrValue::from("/"),
+            name: AttrValue::from("Home"),
+            selected: false,
         },
         SidebarItemProps {
-            link: "/projects".to_string(),
-            name: "Projects".to_string(),
-            selected: false
+            link: AttrValue::from("/projects"),
+            name: AttrValue::from("Projects"),
+            selected: false,
         },
         SidebarItemProps {
-            link: "/about_me".to_string(),
-            name: "About me".to_string(),
-            selected: false
+            link: AttrValue::from("/about_me"),
+            name: AttrValue::from("About Me"),
+            selected: false,
         },
     ];
 
+    let end_items = vec![
+        SidebarItemProps {
+            link: AttrValue::from("/socials"),
+            name: AttrValue::from("Socials"),
+            selected: false,
+        },
+        SidebarItemProps {
+            link: AttrValue::from("/blog"),
+            name: AttrValue::from("Blog"),
+            selected: false,
+        },
+        SidebarItemProps {
+            link: AttrValue::from("/settings"),
+            name: AttrValue::from("Settings"),
+            selected: false,
+        },
+    ];
+
+    html! {
+    <nav>
+        {sidebar_items("sidebar-options-start".to_string(), start_items)}
+        {sidebar_items("sidebar-options-main".to_string(), main_items)}
+        {sidebar_items("sidebar-options-end".to_string(), end_items)}
+    </nav>
+    }
+}
+
+fn sidebar_items(id: String, sidebar_items: Vec<SidebarItemProps>) -> Html {
     let mut current_pathname = String::new();
 
     if let Some(window) = window() {
@@ -35,18 +69,11 @@ pub fn sidebar() -> Html {
     }
 
     html! {
-    <nav>
-        <ul id="sidebar-options-main" class="sidebar-options">
-            { for items.iter_mut().map(|props| {
-                let selected = current_pathname == props.link;   
-
-                html! { <SidebarItem link={props.link.clone()} name={props.name.clone()} selected={selected} /> }
-            }) }
-        </ul>
-
-        <ul id="sidebar-options-end" class="sidebar-options">
-            <SidebarItem link="/settings" name="Settings" selected={current_pathname == "/settings"} />
-        </ul>
-    </nav>
+    <ul id={id} class="sidebar-options">
+    { for sidebar_items.iter().map(|props| {
+        let selected = current_pathname == props.link;
+        html! { <SidebarItem link={props.link.clone()} name={props.name.clone()} selected={selected} /> }
+    }) }
+    </ul>
     }
 }

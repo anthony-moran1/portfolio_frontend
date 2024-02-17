@@ -1,7 +1,6 @@
 nav {
-    --width: 100px;
-    --width-hover: 150px;
-    --width-selected: calc(calc(var(--width) + var(--width-hover)) / 2);
+    --width: 90px;
+    --width-selected: calc(calc(var(--width) + var(--left-content-width)) / 2);
 
     --height: 30px;
     --height-hover: 40px;
@@ -10,7 +9,10 @@ nav {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 
-    margin: 10px 0;
+    gap: 15px;
+    flex-grow: 1;
+
+    overflow: hidden scroll;
 
     align-items: center;
 }
@@ -32,6 +34,10 @@ nav {
     width: var(--width-hover);
 }
 
+#sidebar-option-games > .sidebar-option-link {
+    background-color: orange;
+}
+
 #sidebar-option-home > .sidebar-option-link {
     background-color: palegoldenrod;
 }
@@ -44,29 +50,36 @@ nav {
     background-color: paleturquoise;
 }
 
+#sidebar-option-socials > .sidebar-option-link {
+    background-color: plum;
+}
+
+#sidebar-option-blog > .sidebar-option-link {
+    background-color: palevioletred;
+}
+
 #sidebar-option-settings > .sidebar-option-link {
     background-color: slategrey;
 }
 
 .sidebar-option-link {
-    padding: 5px 10px;
+    padding: 5px 10px 5px 0;
     width: var(--width);
     height: var(--height);
 
     border-radius: 0 20px 20px 0;
 
-    text-decoration: none;
     justify-content: end;
     align-items: center;
 
     color: black;
-    filter: saturate(0.85) brightness(0.95);
+    filter: saturate(0.95) brightness(0.97);
 
     transition: width ease-in-out 400ms, height ease-in-out 400ms, filter ease-in-out 700ms;
 }
 
 .sidebar-option:hover > .sidebar-option-link {
-    width: var(--width-hover);
+    width: var(--left-content-width);
     height: var(--height-hover);
     filter: saturate(1) brightness(1.05);
 }

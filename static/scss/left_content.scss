@@ -1,0 +1,6 @@
+@import "sidebar.scss";
+
+#left-content {
+    --left-content-width: 150px;
+    width: var(--left-content-width);
+}
