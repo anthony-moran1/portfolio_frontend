@@ -1,0 +1,104 @@
+nav {
+    --width: calc(var(--left-content-width) * 3 / 5);
+    --width-selected: calc(calc(var(--width) + var(--left-content-width)) / 2);
+
+    --height: 30px;
+    --height-hover: 40px;
+    --height-selected: calc(calc(var(--height) + var(--height-hover)) / 2);
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    justify-content: space-between;
+
+    gap: 15px;
+    flex-grow: 1;
+
+    overflow: hidden scroll;
+
+    align-items: center;
+}
+
+.sidebar-options {
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar-option {
+    width: var(--left-content-width);
+
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.sidebar-option-link {
+    position: relative;
+
+    padding: 5px 10px 5px 0;
+    width: var(--width);
+    height: var(--height);
+
+    justify-content: end;
+    align-items: center;
+
+    border-radius: inherit;
+    overflow: hidden;
+
+    color: black;
+    filter: saturate(0.8) brightness(0.97);
+
+    transition: width ease-in-out 400ms, height ease-in-out 400ms, filter ease-in-out 700ms, opacity ease-in-out 700ms;
+}
+
+.sidebar-option:hover > .sidebar-option-link {
+    width: var(--left-content-width);
+    height: var(--height-hover);
+    filter: saturate(1.2) brightness(1.1);
+}
+
+.sidebar-option:not(:hover) > .sidebar-option-link.selected {
+    width: var(--width-selected);
+    height: var(--height-selected);
+    filter: saturate(1) brightness(1.05);
+}
+
+.sidebar-option:not(:hover) > .sidebar-option-link:not(.selected) {
+    opacity: 0.9;
+}
+
+#sidebar-option-games > .sidebar-option-link {
+    background-color: var(--col-games);
+}
+
+#sidebar-option-home > .sidebar-option-link {
+    background-color: var(--col-home);
+}
+
+#sidebar-option-projects > .sidebar-option-link {
+    background-color: var(--col-projects);
+}
+
+#sidebar-option-about-me > .sidebar-option-link {
+    background-color: var(--col-about-me);
+}
+
+#sidebar-option-socials > .sidebar-option-link {
+    background-color: var(--col-socials);
+}
+
+#sidebar-option-blog > .sidebar-option-link {
+    background-color: var(--col-blog);
+}
+
+#sidebar-option-settings > .sidebar-option-link {
+    background-color: var(--col-settings);
+}
+
+.sidebar-option-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.2;
+}

@@ -1,0 +1,43 @@
+.project:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.video-game-image-parent {
+    display: inline-block;
+    position: relative;
+}
+
+.video-game-image {
+    width: 300px;
+    border-radius: 5px;
+}
+
+.video-game-image-parent:has(.video-game-image-preview:hover) {
+    position: initial;
+}
+
+.video-game-image-preview {
+    margin: 10px;
+    z-index: 1;
+    box-shadow: none;
+}
+
+.video-game-image-preview:hover {
+    box-shadow: 0 0 10px 0 #648;
+}
+
+.video-game-detail-overlay:has(+ .video-game-image-preview:hover) {
+    display: block;
+}
+
+.video-game-detail-overlay {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 0;
+    background-color: #0006;
+}

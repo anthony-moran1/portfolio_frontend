@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.vh-100 {
+    height: 100dvh;
+}
+
+.page-colour {
+    color: var(--col-page);
+}
+
+.page-background-colour {
+    background-color: var(--col-page);
+}
+
+.align-items-center {
+    align-items: center;
+}

@@ -15,7 +15,7 @@ pub fn projects() -> Html {
             <h3>{"Video Games"}</h3>
             <p>{"If the "}<a href="/games">{"tab"}</a>{" on the left didn't give it away already, I make games! None in recent times I must admit (although that could be subject to change). In the mean time, do feel free to check out the previous games I have made!"}</p>
 
-            <img src="images/Memories.png" />
+            <img src="static/images/Memories.png" />
         </div>
     </div>
     </Layout>

@@ -5,7 +5,7 @@ use yew::prelude::*;
 pub fn index() -> Html {
     let children_middle = html! {
     <div class="flex align-items-center">
-        <img src="images/arrows.png" />
+        <img src="static/images/arrows.png" />
         <p>{"Use "}<b class="page-colour">{"this"}</b>{" pull tab to see other pages!"}</p>
     </div>
     };
