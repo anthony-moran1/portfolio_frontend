@@ -31,10 +31,8 @@ pub fn layout(props: &LayoutProps) -> Html {
     <div theme={theme.theme.clone()}>
             <LeftContent />
             <main>
-                <div id="main-start">
-                    <h2 class="page-colour">{"Title"}</h2>
-                    {props.children.clone()}
-                </div>
+                <h2 class="page-colour">{"Title"}</h2>
+                {props.children.clone()}
             </main>
         </div>
     </ContextProvider<ThemeContext>>

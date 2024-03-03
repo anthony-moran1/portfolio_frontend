@@ -26,11 +26,11 @@ use crate::layout::Layout;
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <BrowserRouter>
+        <HashRouter>
             <Layout>
                 <Switch<Route> render={switch} />
             </Layout>
-        </BrowserRouter>
+        </HashRouter>
     }
 }
 
