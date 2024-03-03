@@ -13,8 +13,9 @@
 
     border-radius: 0 10px 10px 0;
     filter: opacity(0.5);
+    // opacity: 0.5;
 
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
     transition: translate ease-in-out 500ms;
@@ -25,7 +26,9 @@
     padding: var(--left-content-padding) var(--left-content-padding) var(--left-content-padding) 0;
     height: 100%;
 
-    backdrop-filter: saturate(0.8) brightness(0.9);
+    // filter: opacity(1);
+
+    backdrop-filter: saturate(0.4) brightness(0.8);
     -webkit-backdrop-filter: saturate(0.4) brightness(0.8);
 }
 

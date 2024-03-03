@@ -1,11 +1,10 @@
-use crate::layout::Layout;
 use yew::prelude::*;
+
+use crate::not_implemented::NotImplemented;
 
 #[function_component(Socials)]
 pub fn socials() -> Html {
     html! {
-    <Layout title="Socials">
-        <p>{"Check out my socials!"}</p>
-    </Layout>
+        <NotImplemented title="Socials"></NotImplemented>
     }
 }

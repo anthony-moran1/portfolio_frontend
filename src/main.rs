@@ -1,6 +1,8 @@
 mod layout;
 mod router;
 
+mod not_implemented;
+
 mod about_me;
 mod index;
 mod projects;
