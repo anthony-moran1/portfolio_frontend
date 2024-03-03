@@ -24,7 +24,7 @@ use router::{switch, Route};
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <BrowserRouter basename="portfolio_frontend">
+        <BrowserRouter>
             <Switch<Route> render={switch} />
         </BrowserRouter>
     }
