@@ -1,15 +1,16 @@
 use yew::prelude::*;
-use yew_router::prelude::*;
-
-use crate::{layout::ThemeContext, router::Route};
+use yew_router::{components::Link, hooks::use_route};
+use crate::{layout::{ThemeContext, TitleContext}, router::Route};
 
 #[function_component(SidebarItem)]
 pub fn sidebar_item(props: &SidebarItemProps) -> Html {
     let route = use_route::<Route>().unwrap();
     let theme = use_context::<ThemeContext>().unwrap();
+    let title = use_context::<TitleContext>().unwrap();
 
     if route == props.link {
         theme.dispatch(props.name.to_lowercase().replace(" ", "-"));
+        title.dispatch(props.name.clone().into());
     }
 
     html! {

@@ -1,50 +1,65 @@
 :root {
-    --col-games: coral;
+    --col-games-rgb: 255, 127, 80;
+    --col-games: rgb(var(--col-games-rgb));
     
-    --col-home: palegoldenrod;
-    --col-projects: palegreen;
-    --col-about-me: paleturquoise;
+    --col-home-rgb: 238, 232, 170;
+    --col-home: rgb(var(--col-home-rgb));
+    --col-projects-rgb: 152, 251, 152;
+    --col-projects: rgb(var(--col-projects-rgb));
+    --col-about-me-rgb: 175, 238, 238;
+    --col-about-me: rgb(var(--col-about-me-rgb));
 
-    --col-socials: plum;
-    --col-blog: palevioletred;
-    --col-settings: slategrey;
+    --col-socials-rgb: 221, 160, 221;
+    --col-socials: rgb(var(--col-socials-rgb));
+    --col-blog-rgb: 216, 112, 147;
+    --col-blog: rgb(var(--col-blog-rgb));
+    --col-settings-rgb: 112, 128, 144;
+    --col-settings: rgb(var(--col-settings-rgb));
 
-    --col-page: var(--col-home);
-    --col-main: whitesmoke;
-    --col-text: #000;
+    --col-page-rgb: var(--col-home-rgb);
+    --col-page: rgb(var(--col-page-rgb));
+    --col-main: ivory;
+    --col-text: #22222c;
 }
 
 [theme="games"] {
-    --col-page: var(--col-games);
+    --col-page-rgb: var(--col-games-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="home"] {
-    --col-page: var(--col-home);
+    --col-page-rgb: var(--col-home-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="projects"] {
-    --col-page: var(--col-projects);
+    --col-page-rgb: var(--col-projects-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="about-me"] {
-    --col-page: var(--col-about-me);
+    --col-page-rgb: var(--col-about-me-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="socials"] {
-    --col-page: var(--col-socials);
+    --col-page-rgb: var(--col-socials-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="blog"] {
-    --col-page: var(--col-blog);
+    --col-page-rgb: var(--col-blog-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 [theme="settings"] {
-    --col-page: var(--col-settings);
+    --col-page-rgb: var(--col-settings-rgb);
+    --col-page: rgb(var(--col-page-rgb));
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --col-main: #222228;
+        --col-main: #22222c;
         --col-text: ivory;
     }
 }

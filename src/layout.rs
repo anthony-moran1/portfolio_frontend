@@ -18,7 +18,19 @@ impl Reducible for Theme {
     }
 }
 
+#[derive(Debug, Eq, PartialEq, Clone)]
+pub struct Title(AttrValue);
+
+impl Reducible for Title {
+    type Action = AttrValue;
+
+    fn reduce(self: Rc<Self>, title: Self::Action) -> Rc<Self> {
+        Self(title).into()
+    }
+}
+
 pub type ThemeContext = UseReducerHandle<Theme>;
+pub type TitleContext = UseReducerHandle<Title>;
 
 #[function_component(Layout)]
 pub fn layout(props: &LayoutProps) -> Html {
@@ -26,15 +38,19 @@ pub fn layout(props: &LayoutProps) -> Html {
         theme: String::new(),
     });
 
+    let title = use_reducer_eq(|| Title(AttrValue::default()));
+
     html! {
     <ContextProvider<ThemeContext> context={theme.clone()}>
-    <div theme={theme.theme.clone()}>
+    <ContextProvider<TitleContext> context={title.clone()}>
+        <div theme={theme.theme.clone()}>
             <LeftContent />
             <main>
-                <h2 class="page-colour">{"Title"}</h2>
+                <h2 class="page-colour">{title.clone().0.to_string()}</h2>
                 {props.children.clone()}
             </main>
         </div>
+    </ContextProvider<TitleContext>>
     </ContextProvider<ThemeContext>>
     }
 }
