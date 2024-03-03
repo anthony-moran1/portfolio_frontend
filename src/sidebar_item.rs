@@ -9,7 +9,7 @@ pub fn sidebar_item(props: &SidebarItemProps) -> Html {
     let theme = use_context::<ThemeContext>().unwrap();
 
     if route == props.link {
-        theme.dispatch(props.name.to_lowercase());
+        theme.dispatch(props.name.to_lowercase().replace(" ", "-"));
     }
 
     html! {
