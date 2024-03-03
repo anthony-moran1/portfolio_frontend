@@ -17,12 +17,12 @@ pub fn sidebar() -> Html {
             selected: false,
         },
         SidebarItemProps {
-            link: AttrValue::from("/projects"),
+            link: AttrValue::from("projects"),
             name: AttrValue::from("Projects"),
             selected: false,
         },
         SidebarItemProps {
-            link: AttrValue::from("/about_me"),
+            link: AttrValue::from("about_me"),
             name: AttrValue::from("About Me"),
             selected: false,
         },
@@ -30,17 +30,17 @@ pub fn sidebar() -> Html {
 
     let end_items = vec![
         SidebarItemProps {
-            link: AttrValue::from("/socials"),
+            link: AttrValue::from("socials"),
             name: AttrValue::from("Socials"),
             selected: false,
         },
         SidebarItemProps {
-            link: AttrValue::from("/blog"),
+            link: AttrValue::from("blog"),
             name: AttrValue::from("Blog"),
             selected: false,
         },
         SidebarItemProps {
-            link: AttrValue::from("/settings"),
+            link: AttrValue::from("settings"),
             name: AttrValue::from("Settings"),
             selected: false,
         },
