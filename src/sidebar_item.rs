@@ -1,6 +1,7 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
 
-use crate::layout::ThemeContext;
+use crate::{layout::ThemeContext, router::Route};
 
 #[function_component(SidebarItem)]
 pub fn sidebar_item(props: &SidebarItemProps) -> Html {
@@ -16,17 +17,17 @@ pub fn sidebar_item(props: &SidebarItemProps) -> Html {
 
     html! {
         <li id={format!("sidebar-option-{}", props.name.to_lowercase().replace(" ", "-"))} class="sidebar-option">
-            <a class={format!("flex sidebar-option-link {}", cls)} href={props.link.clone()}>
+            <Link<Route> classes={classes!("flex", "sidebar-option-link", cls)} to={props.link.clone()}>
                 {props.name.clone()}
                 <div class="sidebar-option-overlay page-background-colour"></div>
-            </a>
+            </Link<Route>>
         </li>
     }
 }
 
 #[derive(Properties, PartialEq)]
 pub struct SidebarItemProps {
-    pub link: AttrValue,
+    pub link: Route,
     pub name: AttrValue,
     pub selected: bool
 }

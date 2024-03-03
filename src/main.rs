@@ -21,11 +21,15 @@ use yew_router::prelude::*;
 
 use router::{switch, Route};
 
+use crate::layout::Layout;
+
 #[function_component(App)]
 fn app() -> Html {
     html! {
         <BrowserRouter>
-            <Switch<Route> render={switch} />
+            <Layout>
+                <Switch<Route> render={switch} />
+            </Layout>
         </BrowserRouter>
     }
 }

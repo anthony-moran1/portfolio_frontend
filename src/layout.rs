@@ -32,16 +32,8 @@ pub fn layout(props: &LayoutProps) -> Html {
             <LeftContent />
             <main>
                 <div id="main-start">
-                    <h2 class="page-colour">{props.title.clone()}</h2>
+                    <h2 class="page-colour">{"Title"}</h2>
                     {props.children.clone()}
-                </div>
-
-                <div id="main-middle">
-                    {props.children_middle.clone()}
-                </div>
-
-                <div id="main-end">
-                    {props.children_end.clone()}
                 </div>
             </main>
         </div>
@@ -51,10 +43,5 @@ pub fn layout(props: &LayoutProps) -> Html {
 
 #[derive(Properties, PartialEq)]
 pub struct LayoutProps {
-    pub title: AttrValue,
     pub children: Html,
-    #[prop_or_default]
-    pub children_middle: Html,
-    #[prop_or_default]
-    pub children_end: Html
 }

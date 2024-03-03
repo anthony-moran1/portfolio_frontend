@@ -1,4 +1,3 @@
-use crate::layout::Layout;
 use wasm_bindgen::prelude::wasm_bindgen;
 use yew::prelude::*;
 
@@ -19,7 +18,7 @@ pub fn games() -> Html {
         })
     };
 
-    let children_middle = html! {
+    let _children_middle = html! {
         <>
             <button {onclick} style={format!("display: {}", *button_visibility)}>{"Press this button and maybe it will appear..."}</button>
             <canvas id="canvas-game" style={format!("display: {}", *canvas_visibility)}></canvas>
@@ -27,9 +26,7 @@ pub fn games() -> Html {
     };
 
     html! {
-        <Layout title="Games" {children_middle}>
-            <p>{"I promise I do actually make games. You will be able to play them here soon!"}</p>
-        </Layout>
+        <p>{"I promise I do actually make games. You will be able to play them here soon!"}</p>
     }
 }
 
