@@ -5,14 +5,14 @@ use yew::prelude::*;
 #[function_component(Sidebar)]
 pub fn sidebar() -> Html {
     let start_items = vec![SidebarItemProps {
-        link: AttrValue::from("/games"),
+        link: AttrValue::from("games"),
         name: AttrValue::from("Games"),
         selected: false,
     }];
 
     let main_items = vec![
         SidebarItemProps {
-            link: AttrValue::from("/"),
+            link: AttrValue::from(""),
             name: AttrValue::from("Home"),
             selected: false,
         },
