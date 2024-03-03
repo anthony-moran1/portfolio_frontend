@@ -10,11 +10,11 @@ mod projects;
 mod settings;
 mod socials;
 
+mod blog;
+mod games;
 mod left_content;
 mod sidebar;
 mod sidebar_item;
-mod blog;
-mod games;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
